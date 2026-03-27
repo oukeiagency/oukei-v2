@@ -1,27 +1,27 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
-import { Cpu, Database, Cloud, Lock } from "lucide-react";
+import { TrendingUp, Zap, Palette, Code } from "lucide-react";
 
 const technologies = [
   {
-    icon: Cpu,
-    name: "Machine Learning",
-    description: "Modelos predictivos y sistemas de recomendación",
+    icon: TrendingUp,
+    name: "Marketing Digital",
+    description: "Google Ads, Meta Ads y contenido que genera confianza — y clientes reales.",
   },
   {
-    icon: Database,
-    name: "Big Data Analytics",
-    description: "Procesamiento y análisis de datos masivos",
+    icon: Palette,
+    name: "Diseño & Experiencias",
+    description: "Identidad visual y experiencias que hacen que te recuerden — por las razones correctas.",
   },
   {
-    icon: Cloud,
-    name: "Cloud Infrastructure",
-    description: "Arquitecturas escalables y resilientes",
+    icon: Code,
+    name: "Software a Medida",
+    description: "Web, e-commerce y sistemas a medida. Rápidos, modernos y diseñados para convertir visitas en clientes.",
   },
   {
-    icon: Lock,
-    name: "Security First",
-    description: "Protección de datos y cumplimiento normativo",
+    icon: Zap,
+    name: "Automatización con IA",
+    description: "Flujos inteligentes que eliminan lo repetitivo y te devuelven tiempo para lo que importa.",
   },
 ];
 
@@ -72,13 +72,13 @@ export function TechShowcase() {
             className="text-5xl md:text-7xl font-bold mb-6 headline"
             style={{ color: 'white', textShadow: '3px 3px 0px rgba(0,0,0,0.2)' }}
           >
-            Tecnología{" "}
+            Una solución Oükei{" "}
             <span style={{ color: '#006DFD', textShadow: '3px 3px 0px rgba(0,0,0,0.25)' }}>
-              de vanguardia
+              para cada problema
             </span>
           </h2>
           <p className="text-xl font-semibold max-w-3xl mx-auto" style={{ color: 'white' }}>
-            Utilizamos las herramientas más avanzadas del mercado para garantizar resultados excepcionales
+            Conectamos ideas, creatividad y tecnología para que tu negocio deje huella. Diseñado para que siempre digas: Oükei, esto funciona.
           </p>
         </motion.div>
 
@@ -95,19 +95,11 @@ export function TechShowcase() {
               className="group relative"
             >
               <motion.div
-                className="relative h-full p-6 rounded-2xl overflow-hidden"
-                style={{ background: '#006DFD', border: '2px solid rgba(255,255,255,0.2)', boxShadow: '0 8px 0 rgba(0,0,0,0.25), 0 15px 30px rgba(0,0,0,0.15)' }}
+                className="relative h-full p-6 rounded-2xl"
+                style={{ background: 'white', border: 'none', boxShadow: `0 8px 0 ${index % 2 === 0 ? '#CC5522' : '#0052CC'}, 0 15px 30px rgba(0,0,0,0.15)` }}
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
               >
-                {/* Hover gradient */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#006DFD]/20 to-[#FF6D2C]/20"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredIndex === index ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
-                />
-
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon */}
@@ -118,30 +110,15 @@ export function TechShowcase() {
                     }}
                     transition={{ duration: 0.6 }}
                   >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#006DFD] to-[#FF6D2C] flex items-center justify-center">
-                      <tech.icon className="w-6 h-6 text-white" />
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'white', boxShadow: `0 4px 0 ${index % 2 === 0 ? '#0052CC' : '#CC5522'}` }}>
+                      <tech.icon className="w-6 h-6" style={{ color: index % 2 === 0 ? '#006DFD' : '#FF6D2C' }} />
                     </div>
                   </motion.div>
 
-                  <h3 className="text-xl font-bold mb-2" style={{ color: 'white', textShadow: '1px 1px 0px rgba(0,0,0,0.4)' }}>{tech.name}</h3>
-                  <p className="text-sm font-medium" style={{ color: 'rgba(255,255,255,0.8)' }}>{tech.description}</p>
+                  <h3 className="text-xl font-bold mb-2" style={{ color: index % 2 === 0 ? '#006DFD' : '#FF6D2C' }}>{tech.name}</h3>
+                  <p className="text-sm font-medium" style={{ color: '#444' }}>{tech.description}</p>
                 </div>
 
-                {/* Animated border */}
-                <motion.div
-                  className="absolute inset-0 rounded-2xl"
-                  style={{
-                    background: "linear-gradient(90deg, transparent, rgba(0, 109, 253, 0.5), transparent)",
-                  }}
-                  animate={{
-                    x: hoveredIndex === index ? ["0%", "200%"] : "0%",
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: hoveredIndex === index ? Infinity : 0,
-                    ease: "linear",
-                  }}
-                />
               </motion.div>
             </motion.div>
           ))}
@@ -155,9 +132,9 @@ export function TechShowcase() {
           className="grid md:grid-cols-3 gap-8 mt-20"
         >
           {[
-            { value: "500+", label: "Proyectos Exitosos" },
-            { value: "98%", label: "Satisfacción del Cliente" },
-            { value: "5x", label: "ROI Promedio" },
+            { value: "+85%", label: "Reducción de carga operativa" },
+            { value: "3x", label: "Más leads que responden" },
+            { value: "24/7", label: "Tu negocio siempre activo" },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

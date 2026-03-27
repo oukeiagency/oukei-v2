@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-const particles = Array.from({ length: 24 }, (_, i) => ({
+const particles = Array.from({ length: 8 }, (_, i) => ({
   id: i,
   size: Math.random() * 10 + 4,
   left: Math.random() * 100,

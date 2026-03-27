@@ -142,23 +142,6 @@ export function CaseStudies() {
           ))}
         </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <motion.button
-            className="group px-8 py-4 text-white rounded-full inline-flex items-center gap-2 font-bold"
-            style={{ background: '#FF6D2C', boxShadow: '0 6px 0 #C5522A, 0 10px 25px rgba(255,109,44,0.4)' }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Ver más casos de éxito
-            <ArrowUpRight className="w-5 h-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </motion.button>
-        </motion.div>
       </div>
     </div>
   );

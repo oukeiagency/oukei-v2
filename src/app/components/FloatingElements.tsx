@@ -4,7 +4,7 @@ import oukei3 from "@/assets/OUKEI-3.png";
 
 const logoImages = [oukei2, oukei3];
 
-const floatingLogos = Array.from({ length: 12 }, (_, i) => ({
+const floatingLogos = Array.from({ length: 8 }, (_, i) => ({
   id: i,
   src: logoImages[i % 2],
   size: Math.random() * 28 + 20,
@@ -14,17 +14,18 @@ const floatingLogos = Array.from({ length: 12 }, (_, i) => ({
   delay: Math.random() * 4,
 }));
 
+const shapes = Array.from({ length: 10 }, (_, i) => ({
+  id: i,
+  type: i % 3,
+  size: Math.floor(Math.random() * 30 + 15),
+  initialX: Math.floor(Math.random() * 100),
+  initialY: Math.floor(Math.random() * 100),
+  duration: Math.floor(Math.random() * 15 + 10),
+  delay: Math.floor(Math.random() * 5),
+  color: ['#FFD700', '#FF6D2C', '#006DFD'][i % 3],
+}));
+
 export function FloatingElements() {
-  const shapes = Array.from({ length: 15 }, (_, i) => ({
-    id: i,
-    type: i % 3, // 0: circle, 1: square, 2: triangle
-    size: Math.random() * 30 + 15,
-    initialX: Math.random() * 100,
-    initialY: Math.random() * 100,
-    duration: Math.random() * 15 + 10,
-    delay: Math.random() * 5,
-    color: ['#FFD700', '#FF6D2C', '#006DFD', '#F093FB', '#00F2FE'][i % 5],
-  }));
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -67,6 +68,7 @@ export function FloatingElements() {
             height: shape.size,
             left: `${shape.initialX}%`,
             top: `${shape.initialY}%`,
+            willChange: 'transform, opacity',
           }}
           animate={{
             y: [0, -150, 0],

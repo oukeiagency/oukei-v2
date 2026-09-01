@@ -30,7 +30,7 @@ export function Process() {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   return (
-    <div id="proceso" ref={containerRef} className="relative py-32 px-6 bg-white overflow-hidden">
+    <div id="proceso" ref={containerRef} className="relative py-16 px-6 bg-white overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section header */}
@@ -38,7 +38,7 @@ export function Process() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-10"
         >
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export function Process() {
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#006DFD]/0 via-[#006DFD]/50 via-[#FF6D2C]/50 to-[#FF6D2C]/0" />
 
           {/* Steps */}
-          <div className="space-y-24">
+          <div className="space-y-10">
             {steps.map((step, index) => {
               const isEven = index % 2 === 0;
 
@@ -95,7 +95,7 @@ export function Process() {
                       whileHover={{ scale: 1.02 }}
                       className="inline-block"
                     >
-                      <div className="relative p-8 rounded-2xl overflow-hidden"
+                      <div className="relative p-5 rounded-2xl overflow-hidden"
                         style={{ border: `2px solid ${index % 2 === 0 ? '#006DFD' : '#FF6D2C'}20`, background: 'white', boxShadow: `0 8px 0 ${index % 2 === 0 ? '#006DFD' : '#FF6D2C'}30, 0 15px 30px rgba(0,0,0,0.08)` }}>
                         <h3 className="text-3xl font-bold mb-4" style={{ color: index % 2 === 0 ? '#006DFD' : '#FF6D2C' }}>{step.title}</h3>
                         <p className="leading-relaxed text-lg whitespace-pre-line" style={{ color: '#444' }}>{step.description}</p>

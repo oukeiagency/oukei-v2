@@ -1,7 +1,6 @@
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
 import { Services } from "../components/Services";
-import { FaceDecoration } from "../components/FaceDecoration";
 import { Process } from "../components/Process";
 import { Diferencial } from "../components/Diferencial";
 import { TechShowcase } from "../components/TechShowcase";
@@ -23,20 +22,8 @@ export default function Home() {
       <div className="relative z-10">
         <Navbar />
 
-        <div className="relative">
-          <FaceDecoration
-            style={{
-              position: "absolute",
-              right: 0,
-              top: "calc(100vh - 13.75vw)",
-              width: "55vw",
-              zIndex: 5,
-              pointerEvents: "none",
-            }}
-          />
-          <Hero />
-          <Services />
-        </div>
+        <Hero />
+        <Services />
         <SectionTransition from="#006DFD" to="#ffffff" />
         <Process />
         <Diferencial />

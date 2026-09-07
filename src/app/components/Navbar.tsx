@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import oukeiLogo from "@/assets/Oukei_v2.svg";
+import { waLink } from "@/config/site";
 
 const navItems = [
   { label: "Servicios", href: "#servicios" },
@@ -124,7 +125,11 @@ export function Navbar() {
               ))}
 
               {/* CTA */}
-              <motion.button
+              <motion.a
+                href={waLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-analytics="wa-nav"
                 className="px-5 py-2.5 rounded-full font-bold text-sm text-white"
                 style={{
                   background: ctaBg,
@@ -136,8 +141,8 @@ export function Navbar() {
                 whileHover={{ y: -3 }}
                 whileTap={{ y: 2 }}
               >
-                ¡Contactar!
-              </motion.button>
+                Escríbenos
+              </motion.a>
             </motion.div>
 
             {/* Mobile burger */}
@@ -217,8 +222,12 @@ export function Navbar() {
 
               {/* Drawer CTA */}
               <div className="px-6 pb-8">
-                <motion.button
-                  className="w-full py-3 text-white rounded-2xl font-bold text-sm"
+                <motion.a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-analytics="wa-nav-mobile"
+                  className="block w-full py-3 text-center text-white rounded-2xl font-bold text-sm"
                   style={{
                     background: '#FF6D2C',
                     boxShadow: '0 4px 0 #EB3200',
@@ -227,8 +236,8 @@ export function Navbar() {
                   whileTap={{ y: 2, boxShadow: '0 2px 0 #EB3200' }}
                   onClick={() => setIsOpen(false)}
                 >
-                  ¡Contactar!
-                </motion.button>
+                  Escríbenos
+                </motion.a>
               </div>
             </motion.div>
           </>

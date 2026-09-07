@@ -1,19 +1,11 @@
 import { useEffect } from "react";
 import { Link } from "react-router";
-import { CONTACT_EMAIL } from "@/config/site";
-
-const PRIVACY_EMAIL = "privacidad@oukei.com.mx";
-
-function Fill({ children }: { children: string }) {
-  return (
-    <span
-      className="whitespace-nowrap rounded px-1.5 py-0.5 text-sm font-semibold"
-      style={{ background: "#fff3ec", border: "1px dashed #FF6D2C", color: "#c2521e" }}
-    >
-      {children}
-    </span>
-  );
-}
+import {
+  CONTACT_EMAIL,
+  PRIVACY_EMAIL,
+  LEGAL_RESPONSIBLE,
+  LEGAL_ADDRESS,
+} from "@/config/site";
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
@@ -46,7 +38,7 @@ export default function PrivacyPage() {
 
         <h1 className="text-3xl font-bold md:text-4xl">Aviso de Privacidad</h1>
         <p className="mt-2 text-sm" style={{ color: "#5b5b5b" }}>
-          Última actualización: 6 de septiembre de 2026
+          Última actualización: 7 de septiembre de 2026
         </p>
 
         <p className="mt-8 text-lg" style={{ color: "#5b5b5b" }}>
@@ -59,21 +51,21 @@ export default function PrivacyPage() {
           className="mt-4 rounded-xl p-4 text-sm"
           style={{ background: "#f5f7fa", color: "#5b5b5b" }}
         >
-          <strong>Antes de publicar:</strong> sustituir los campos marcados en{" "}
-          <Fill>[NARANJA]</Fill> por los datos reales de OÜKEI (nombre o razón
-          social y domicilio) y hacer una revisión legal de la versión final.
+          <strong>Nota:</strong> OÜKEI aún no está constituida como sociedad
+          mercantil, por lo que el responsable es una persona física con
+          actividad empresarial. Si más adelante se constituye una sociedad
+          (S.A. de C.V., S.A.S., etc.), actualizar el apartado 1. Recomendable una
+          revisión legal antes de publicar.
         </div>
 
         <H2>1. Responsable del tratamiento de tus datos</H2>
         <p className="mt-3">
-          <Fill>[NOMBRE COMPLETO O RAZÓN SOCIAL DEL TITULAR DE OÜKEI]</Fill> (en
-          adelante, “OÜKEI”, “nosotros”), con domicilio en{" "}
-          <Fill>[CALLE Y NÚMERO, COLONIA, C.P., MUNICIPIO, ESTADO, MÉXICO]</Fill> y
-          sitio web oukei.com.mx, es responsable del tratamiento de tus datos
-          personales conforme a la Ley Federal de Protección de Datos Personales
-          en Posesión de los Particulares (publicada en el Diario Oficial de la
-          Federación el 20 de marzo de 2025), su Reglamento y disposiciones
-          aplicables.
+          {LEGAL_RESPONSIBLE} (en adelante, “OÜKEI”, “nosotros”), con domicilio en{" "}
+          {LEGAL_ADDRESS} y sitio web oukei.com.mx, es responsable del tratamiento
+          de tus datos personales conforme a la Ley Federal de Protección de Datos
+          Personales en Posesión de los Particulares (publicada en el Diario
+          Oficial de la Federación el 20 de marzo de 2025), su Reglamento y
+          disposiciones aplicables.
         </p>
         <p className="mt-3">
           Contacto para asuntos de datos personales:{" "}
@@ -244,7 +236,7 @@ export default function PrivacyPage() {
             {CONTACT_EMAIL}
           </a>
           <br />
-          <Fill>[DOMICILIO DE OÜKEI]</Fill>
+          {LEGAL_ADDRESS}
         </div>
 
         <p className="mt-10 text-xs" style={{ color: "#5b5b5b" }}>

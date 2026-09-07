@@ -6,9 +6,16 @@ export const WHATSAPP_NUMBER = "524420000000";
 // Cambia a true cuando WHATSAPP_NUMBER sea el número real.
 export const WHATSAPP_CONFIGURED = false;
 
-export const CONTACT_EMAIL = "hola@oukei.com.mx"; // TODO: confirmar buzón (o oukei.agency@gmail.com)
+export const CONTACT_EMAIL = "hola@oukei.com.mx"; // destino: Cloudflare Email Routing → Gmail (pendiente de configurar)
+export const PRIVACY_EMAIL = "privacidad@oukei.com.mx";
 export const SITE_URL = "https://oukei.com.mx";
 export const CITY = "Querétaro";
+
+// Datos legales del responsable (persona física con actividad empresarial, sin sociedad constituida aún).
+export const LEGAL_RESPONSIBLE = "Carlos Barragán, operando bajo la marca “Oükei” (Oükei Agency)";
+// TODO(Carlos): confirmar nombre exacto de la calle ("del Lirio" vs lo dictado).
+export const LEGAL_ADDRESS =
+  "Av. Paseo del Lirio Oriente 200, El Marqués, Querétaro, C.P. 76269";
 
 const DEFAULT_WA_MESSAGE =
   "Hola OÜKEI 👋 Quiero ver el demo del bot de citas para mi negocio.";

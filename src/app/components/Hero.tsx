@@ -68,9 +68,11 @@ function Bubble({ side, children }: { side: "in" | "out"; children: React.ReactN
 
 export function Hero() {
   const reduce = useReducedMotion();
+  // El texto del hero es contenido crítico (LCP): visible desde el primer
+  // frame. Solo un desplazamiento sutil, sin desvanecer opacidad.
   const rise = reduce
     ? {}
-    : { initial: { opacity: 0, y: 12 }, animate: { opacity: 1, y: 0 } };
+    : { initial: { y: 10 }, animate: { y: 0 } };
 
   return (
     <section className="relative bg-white">

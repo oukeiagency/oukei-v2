@@ -40,11 +40,30 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* Brand Colors */
-  --brand-blue: #006DFD;
-  --brand-orange: #FF6D2C;
+  /* Brand Colors — fuente de verdad: Notion "Identidad de Marca — OüKei" */
+  --brand-blue: #006DFD;        /* azul principal: elementos interactivos */
+  --brand-orange: #FF6D2C;      /* naranja: SOLO botones CTA / alta energía */
+  --brand-blue-dark: #002F7F;   /* fondos y profundidad */
+  --brand-orange-dark: #EB3200; /* hover / énfasis */
+  --brand-yellow: #FFD700;      /* uso puntual */
+  --ink: #242424;               /* texto principal */
+  --muted: #5B5B5B;             /* texto secundario */
+  --hairline: #E6E6E6;          /* líneas divisorias */
   --brand-blue-glow: rgba(0, 109, 253, 0.3);
   --brand-orange-glow: rgba(255, 109, 44, 0.3);
+}
+
+/* Accesibilidad: respetar la preferencia de menos movimiento del sistema.
+   Desactiva animaciones y transiciones (incluidas las de motion/react vía CSS). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .dark {

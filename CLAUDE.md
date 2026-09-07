@@ -21,7 +21,15 @@ No test suite is configured.
 
 This is a single-page React 18 + Vite application for a premium futuristic digital agency website. Content is in Spanish.
 
-**Entry point**: `src/main.tsx` → `src/app/App.tsx` → sequential section components
+**Entry point**: `src/main.tsx` → `createBrowserRouter` (react-router 7) → routes:
+- `/` → `src/app/pages/Home.tsx` (sequential section components)
+- `/privacidad` → `src/app/pages/PrivacyPage.tsx`
+- `/gracias` → `src/app/pages/ThanksPage.tsx`
+- `*` → `Home`
+
+Deploy is Cloudflare (`wrangler.jsonc`, static `./dist`, SPA fallback) so client-side routes resolve in prod.
+
+**Site config**: `src/config/site.ts` — `WHATSAPP_NUMBER`, `waLink()`, contact info. All WhatsApp CTAs go through `src/app/components/WhatsAppButton.tsx` (`FloatingWhatsApp`, `WhatsAppCTA`).
 
 **Component layout** (rendered in order):
 - `Navbar` — scroll-reactive navigation

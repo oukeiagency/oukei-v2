@@ -5,10 +5,9 @@ import oukeiLogo from "@/assets/Oukei_v2.svg";
 import { waLink } from "@/config/site";
 
 const navItems = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Proceso", href: "#proceso" },
-  { label: "Tecnología", href: "#tecnologia" },
-  { label: "Casos de Éxito", href: "#casos" },
+  { label: "Cómo funciona", href: "#como-funciona" },
+  { label: "Paquete", href: "#paquete" },
+  { label: "Preguntas", href: "#faq" },
 ];
 
 export function Navbar() {

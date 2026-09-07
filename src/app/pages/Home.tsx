@@ -1,42 +1,30 @@
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
-import { Services } from "../components/Services";
-import { Process } from "../components/Process";
-import { Diferencial } from "../components/Diferencial";
-import { TechShowcase } from "../components/TechShowcase";
-import { CaseStudies } from "../components/CaseStudies";
-import { FinalCTA } from "../components/FinalCTA";
+import { Problema } from "../components/Problema";
+import { ComoFunciona } from "../components/ComoFunciona";
+import { PaqueteStarter } from "../components/PaqueteStarter";
+import { Prueba } from "../components/Prueba";
+import { Faq } from "../components/Faq";
+import { CtaFinal } from "../components/CtaFinal";
 import { Footer } from "../components/Footer";
-import { ScrollProgress } from "../components/ScrollProgress";
-import { SectionTransition } from "../components/SectionTransition";
 import { FloatingWhatsApp } from "../components/WhatsAppButton";
 
-// NOTA: rediseño en curso (rama rediseno-starter). Fase 0 = plumbing (router,
-// config, SEO, WhatsApp). Las secciones de abajo se irán reescribiendo por fases
-// hacia la landing enfocada en el Paquete Starter.
+// Landing enfocada en el Paquete Starter (bot de citas por WhatsApp).
+// Rediseño por fases en la rama rediseno-starter.
 export default function Home() {
   return (
-    <div className="min-h-screen relative overflow-x-hidden bg-white">
-      <ScrollProgress />
-
-      <div className="relative z-10">
-        <Navbar />
-
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <main>
         <Hero />
-        <Services />
-        <SectionTransition from="#006DFD" to="#ffffff" />
-        <Process />
-        <Diferencial />
-        <SectionTransition from="#ffffff" to="#006DFD" />
-        <CaseStudies />
-        <SectionTransition from="#006DFD" to="#FF6D2C" />
-        <TechShowcase />
-        <SectionTransition from="#FF6D2C" to="#006DFD" />
-        <FinalCTA />
-        <SectionTransition from="#006DFD" to="#001133" />
-        <Footer />
-      </div>
-
+        <Problema />
+        <ComoFunciona />
+        <PaqueteStarter />
+        <Prueba />
+        <Faq />
+        <CtaFinal />
+      </main>
+      <Footer />
       <FloatingWhatsApp />
     </div>
   );

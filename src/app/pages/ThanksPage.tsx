@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { Link } from "react-router";
 import { WhatsAppCTA } from "../components/WhatsAppButton";
+import { track } from "@/lib/analytics";
 
 export default function ThanksPage() {
   useEffect(() => {
     document.title = "¡Gracias! — OÜKEI";
     window.scrollTo(0, 0);
+    track("lead_gracias_view");
   }, []);
 
   return (

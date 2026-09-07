@@ -43,6 +43,12 @@ export function Footer() {
           <Link to="/privacidad" className="text-white/70 hover:text-white">
             Aviso de privacidad
           </Link>
+          <Link to="/terminos" className="text-white/70 hover:text-white">
+            Términos de servicio
+          </Link>
+          <Link to="/cookies" className="text-white/70 hover:text-white">
+            Política de cookies
+          </Link>
         </nav>
       </div>
 

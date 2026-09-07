@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oukei.com.mx/sitemap.xml

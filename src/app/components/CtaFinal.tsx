@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Reveal } from "./Reveal";
 import { CONTACT_EMAIL, waLink } from "@/config/site";
+import { submitLead } from "@/lib/lead";
 
 const TIPOS = [
   "Barbería / Salón",
@@ -21,18 +22,14 @@ export function CtaFinal() {
   const [tipo, setTipo] = useState(TIPOS[0]);
   const [error, setError] = useState("");
 
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!nombre.trim() || tel.replace(/\D/g, "").length < 10) {
       setError("Escribe tu nombre y un WhatsApp de 10 dígitos.");
       return;
     }
     setError("");
-    const msg = `Hola OÜKEI 👋 Soy ${nombre.trim()} (${tipo}). Mi WhatsApp: ${tel.trim()}. Quiero ver el demo del bot de citas.`;
-    // Sin backend todavía: el lead llega por WhatsApp con los datos ya escritos.
-    // TODO: reemplazar por un endpoint (Cloudflare Worker) que además registre en
-    // el CRM de Notion y avise por Telegram.
-    window.open(waLink(msg), "_blank", "noopener,noreferrer");
+    await submitLead({ nombre: nombre.trim(), telefono: tel.trim(), tipoNegocio: tipo });
     navigate("/gracias");
   }
 

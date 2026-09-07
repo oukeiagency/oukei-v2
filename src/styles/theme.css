@@ -66,6 +66,40 @@
   }
 }
 
+/* Foco visible por teclado, consistente en todo el sitio. */
+:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Los enlaces ancla no quedan tapados por el navbar fijo. */
+html {
+  scroll-padding-top: 96px;
+}
+
+/* Tipografía de las páginas legales (privacidad / términos / cookies). */
+.legal-body p {
+  margin-top: 0.75rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.legal-body ul {
+  margin-top: 0.75rem;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+.legal-body li {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+.legal-body a {
+  color: var(--brand-blue);
+}
+.legal-body strong {
+  color: var(--ink);
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);

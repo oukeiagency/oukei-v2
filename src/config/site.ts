@@ -16,6 +16,16 @@ export const LEGAL_RESPONSIBLE = "Carlos Barragán, operando bajo la marca “O�
 export const LEGAL_ADDRESS =
   "Av. Paseo del Lirio Oriente 200, El Marqués, Querétaro, C.P. 76269";
 
+// --- Integraciones (vacías hasta configurarlas; el sitio funciona sin ellas) ---
+
+// Google Analytics 4. Ej: "G-XXXXXXX". Vacío = sin GA4.
+export const GA4_ID = "";
+// Meta Pixel. Ej: "123456789012345". Vacío = sin Pixel.
+export const META_PIXEL_ID = "";
+// Endpoint que recibe el formulario de contacto (Cloudflare Worker → Notion CRM + Telegram).
+// Vacío = el lead solo se manda por WhatsApp con los datos pre-escritos.
+export const LEAD_ENDPOINT = "";
+
 const DEFAULT_WA_MESSAGE =
   "Hola OÜKEI 👋 Quiero ver el demo del bot de citas para mi negocio.";
 

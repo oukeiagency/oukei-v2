@@ -4,7 +4,16 @@ const prefersReduced = () =>
   typeof window !== "undefined" &&
   window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
 
-/** Número que cuenta desde 0 hasta `value` la primera vez que entra en viewport. */
+const inViewport = (el: Element) => {
+  const r = el.getBoundingClientRect();
+  return r.top < window.innerHeight && r.bottom > 0;
+};
+
+/**
+ * Número que cuenta desde 0 hasta `value` la primera vez que se hace scroll
+ * hasta él. Si ya está a la vista al cargar (o no hay JS/animación), muestra
+ * directamente el valor final — nunca se queda en 0.
+ */
 export function CountUp({
   value,
   prefix = "",
@@ -21,26 +30,29 @@ export function CountUp({
   style?: React.CSSProperties;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [n, setN] = useState(0);
+  const [n, setN] = useState(value);
   const done = useRef(false);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || done.current) return;
 
-    if (prefersReduced()) {
+    if (prefersReduced() || inViewport(el)) {
       setN(value);
+      done.current = true;
       return;
     }
 
-    const run = () => {
+    // Aún no se ve: arranca en 0 y cuenta cuando entre en pantalla.
+    setN(0);
+
+    const animateUp = () => {
       if (done.current) return;
       done.current = true;
       const start = performance.now();
       const tick = (now: number) => {
         const t = Math.min(1, (now - start) / duration);
-        // easeOutCubic
-        const eased = 1 - Math.pow(1 - t, 3);
+        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
         setN(Math.round(eased * value));
         if (t < 1) requestAnimationFrame(tick);
       };
@@ -50,7 +62,7 @@ export function CountUp({
     const io = new IntersectionObserver(
       (entries) => {
         if (entries.some((e) => e.isIntersecting)) {
-          run();
+          animateUp();
           io.disconnect();
         }
       },

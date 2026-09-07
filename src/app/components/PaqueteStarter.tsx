@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { Reveal, MaskReveal } from "./Reveal";
 import { WhatsAppCTA } from "./WhatsAppButton";
 
 const incluye = [
@@ -28,9 +28,9 @@ export function PaqueteStarter() {
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
             Paquete Starter
           </p>
-          <h2 className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
+          <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
             Nunca más pierdas una cita
-          </h2>
+          </MaskReveal>
         </Reveal>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">

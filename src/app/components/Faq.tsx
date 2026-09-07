@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { Reveal, MaskReveal } from "./Reveal";
 import {
   Accordion,
   AccordionContent,
@@ -41,9 +41,9 @@ export function Faq() {
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
             Preguntas frecuentes
           </p>
-          <h2 className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
+          <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
             Lo que casi todos preguntan
-          </h2>
+          </MaskReveal>
         </Reveal>
 
         <Reveal delay={0.05}>

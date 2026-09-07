@@ -1,4 +1,4 @@
-import { Reveal } from "./Reveal";
+import { Reveal, MaskReveal } from "./Reveal";
 
 const dolores = [
   {
@@ -26,12 +26,13 @@ export function Problema() {
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
             El problema
           </p>
-          <h2
+          <MaskReveal
+            as="h2"
             className="mt-3 max-w-2xl text-3xl font-bold leading-tight md:text-4xl"
             style={{ color: "var(--ink)" }}
           >
             Si tu negocio agenda por WhatsApp, esto te suena
-          </h2>
+          </MaskReveal>
         </Reveal>
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">

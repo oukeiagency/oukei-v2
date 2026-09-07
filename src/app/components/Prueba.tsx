@@ -1,23 +1,30 @@
-import { Reveal } from "./Reveal";
+import { Reveal, MaskReveal } from "./Reveal";
 import { WhatsAppCTA } from "./WhatsAppButton";
+import { CountUp } from "./CountUp";
 
 const casos = [
   {
-    metrica: "−85%",
+    prefix: "−",
+    value: 85,
+    suffix: "%",
     metricaLabel: "consultas manuales por WhatsApp",
     texto:
       "Asistente con IA para un condominio: responde al instante dudas de reglamento, mantenimiento y áreas comunes, 24/7.",
     stack: "n8n · Supabase · OpenAI",
   },
   {
-    metrica: "−100%",
+    prefix: "−",
+    value: 100,
+    suffix: "%",
     metricaLabel: "captura manual de tickets",
     texto:
       "Contabilidad automática: el empleado manda foto del ticket por WhatsApp y la IA extrae monto, IVA y proveedor, y lo registra sola.",
     stack: "WhatsApp · OCR · Google Sheets",
   },
   {
-    metrica: "+40%",
+    prefix: "+",
+    value: 40,
+    suffix: "%",
     metricaLabel: "cierre de propuestas",
     texto:
       "Propuestas comerciales en 5 minutos: al terminar la llamada, la IA arma el documento con la marca del cliente y lo envía por correo.",
@@ -33,9 +40,9 @@ export function Prueba() {
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
             Confianza
           </p>
-          <h2 className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
+          <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
             Esto ya lo hemos construido
-          </h2>
+          </MaskReveal>
           <p className="mt-4 max-w-2xl text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
             OÜKEI está arrancando con negocios de citas en Querétaro. Mientras cerramos
             nuestro primer caso local, esto es lo que nuestro fundador ya implementó
@@ -50,10 +57,14 @@ export function Prueba() {
                 className="h-full rounded-2xl bg-white p-6"
                 style={{ boxShadow: "0 1px 2px rgba(0,0,0,.04), 0 10px 28px rgba(0,0,0,.05)" }}
               >
-                <div className="text-3xl font-bold" style={{ color: "#006DFD" }}>
-                  {c.metrica}
-                </div>
-                <div className="text-sm font-semibold" style={{ color: "var(--ink)" }}>
+                <CountUp
+                  prefix={c.prefix}
+                  value={c.value}
+                  suffix={c.suffix}
+                  className="block text-4xl font-bold"
+                  style={{ color: "#006DFD" }}
+                />
+                <div className="mt-1 text-sm font-semibold" style={{ color: "var(--ink)" }}>
                   {c.metricaLabel}
                 </div>
                 <p className="mt-3 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>

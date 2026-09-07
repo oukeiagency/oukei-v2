@@ -66,6 +66,18 @@
   }
 }
 
+/* Marquee de nichos (Marquee.tsx). La lista se duplica, así que -50% cierra el ciclo. */
+@keyframes oukei-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* "Respiración" muy sutil del CTA principal del hero. */
+@keyframes oukei-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.018); }
+}
+
 /* Foco visible por teclado, consistente en todo el sitio. */
 :focus-visible {
   outline: 2px solid var(--brand-blue);

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { Reveal } from "./Reveal";
+import { Reveal, MaskReveal } from "./Reveal";
 import { CONTACT_EMAIL, waLink } from "@/config/site";
 import { submitLead } from "@/lib/lead";
 
@@ -40,9 +40,9 @@ export function CtaFinal() {
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
             Empieza hoy
           </p>
-          <h2 className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
+          <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
             ¿Listo para dejar de perder citas?
-          </h2>
+          </MaskReveal>
           <p className="mt-4 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
             Cuéntanos de tu negocio y te mostramos el bot funcionando. Sin compromiso.
           </p>

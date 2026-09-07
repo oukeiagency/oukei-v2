@@ -45,7 +45,7 @@ export function WhatsAppCTA({
   analyticsId = "wa-cta",
 }: CTAProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 font-bold text-base transition-transform hover:-translate-y-0.5";
+    "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-4 font-bold text-base transition-transform hover:-translate-y-0.5";
   const styles =
     variant === "primary"
       ? "text-white"
@@ -63,7 +63,14 @@ export function WhatsAppCTA({
       style={inlineStyle}
     >
       <WhatsAppGlyph />
-      {children}
+      <span className="relative z-10">{children}</span>
+      {/* Brillo diagonal que barre al pasar el mouse (solo transform). */}
+      {variant === "primary" && (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 -left-full w-1/3 -skew-x-12 bg-white/25 transition-transform duration-700 ease-out group-hover:translate-x-[400%]"
+        />
+      )}
     </a>
   );
 }

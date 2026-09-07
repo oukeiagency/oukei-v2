@@ -22,7 +22,7 @@ function Check() {
 
 export function PaqueteStarter() {
   return (
-    <section id="paquete" className="bg-white py-20 md:py-28">
+    <section id="paquete" className="bg-white py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
@@ -33,7 +33,7 @@ export function PaqueteStarter() {
           </MaskReveal>
         </Reveal>
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           {/* Qué incluye */}
           <Reveal>
             <ul className="space-y-3">
@@ -51,8 +51,9 @@ export function PaqueteStarter() {
             <div
               className="rounded-2xl border p-7"
               style={{
-                borderColor: "var(--hairline)",
-                boxShadow: "0 1px 2px rgba(0,0,0,.04), 0 10px 28px rgba(0,0,0,.06)",
+                borderColor: "#cddffb",
+                background: "#f4f8ff",
+                boxShadow: "0 1px 2px rgba(0,0,0,.04), 0 14px 34px rgba(0,45,127,.10)",
               }}
             >
               <div className="flex items-baseline gap-2">

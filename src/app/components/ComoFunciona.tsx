@@ -81,8 +81,8 @@ export function ComoFunciona() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="como-funciona" className="py-20 md:py-28" style={{ background: "#f5f7fa" }}>
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+    <section id="como-funciona" className="py-12 md:py-16" style={{ background: "#eef3ff" }}>
+      <div className="mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
         {/* Columna sticky */}
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
@@ -96,7 +96,7 @@ export function ComoFunciona() {
           </MaskReveal>
 
           {/* Indicador de progreso (solo desktop) */}
-          <div className="mt-10 hidden lg:flex lg:gap-4">
+          <div className="mt-8 hidden lg:flex lg:gap-4">
             <div className="relative w-1 flex-none rounded-full" style={{ background: "#dfe4ec" }}>
               <motion.div
                 className="absolute left-0 top-0 w-full rounded-full"
@@ -120,7 +120,7 @@ export function ComoFunciona() {
         </div>
 
         {/* Columna de pasos */}
-        <div className="space-y-5 lg:space-y-8">
+        <div className="space-y-4 lg:space-y-5">
           {pasos.map((p, i) => (
             <Paso
               key={p.titulo}

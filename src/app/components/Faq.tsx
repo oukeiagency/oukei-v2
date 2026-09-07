@@ -35,7 +35,7 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-white py-20 md:py-28">
+    <section id="faq" className="bg-white py-12 md:py-16">
       <div className="mx-auto max-w-3xl px-6">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
@@ -47,7 +47,7 @@ export function Faq() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <Accordion type="single" collapsible className="mt-8">
+          <Accordion type="single" collapsible className="mt-7">
             {faqs.map((f) => (
               <AccordionItem key={f.q} value={f.q} style={{ borderColor: "var(--hairline)" }}>
                 <AccordionTrigger className="text-base font-semibold" style={{ color: "var(--ink)" }}>

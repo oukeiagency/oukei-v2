@@ -20,7 +20,7 @@ const dolores = [
 
 export function Problema() {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-white py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
@@ -35,7 +35,7 @@ export function Problema() {
           </MaskReveal>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
           {dolores.map((d, i) => (
             <Reveal key={d.titulo} delay={i * 0.08}>
               <div
@@ -46,8 +46,8 @@ export function Problema() {
                 }}
               >
                 <div
-                  className="mb-4 flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold"
-                  style={{ background: "#eef3ff", color: "#006DFD" }}
+                  className="mb-4 flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white"
+                  style={{ background: "#006DFD" }}
                 >
                   {i + 1}
                 </div>

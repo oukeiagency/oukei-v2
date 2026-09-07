@@ -155,7 +155,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
       <DotGrid />
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-32 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:pt-40 lg:pb-28">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 pt-28 pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:pt-36 lg:pb-16">
         {/* Texto */}
         <div>
           <motion.p

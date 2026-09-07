@@ -18,8 +18,8 @@ export function Marquee() {
 
   return (
     <div
-      className="border-y bg-white py-4"
-      style={{ borderColor: "var(--hairline)" }}
+      className="border-y py-4"
+      style={{ borderColor: "#dbe6fb", background: "#eef3ff" }}
       aria-label="Negocios para los que trabaja el bot"
     >
       <div

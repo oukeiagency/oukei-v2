@@ -34,28 +34,28 @@ const casos = [
 
 export function Prueba() {
   return (
-    <section className="py-20 md:py-28" style={{ background: "#f5f7fa" }}>
+    <section className="py-12 md:py-16" style={{ background: "#002F7F" }}>
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
+          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#93c0ff" }}>
             Confianza
           </p>
-          <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
+          <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "#ffffff" }}>
             Esto ya lo hemos construido
           </MaskReveal>
-          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
             OÜKEI está arrancando con negocios de citas en Querétaro. Mientras cerramos
             nuestro primer caso local, esto es lo que nuestro fundador ya implementó
             como consultor de automatización:
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
           {casos.map((c, i) => (
             <Reveal key={c.metricaLabel} delay={i * 0.08}>
               <div
                 className="h-full rounded-2xl bg-white p-6"
-                style={{ boxShadow: "0 1px 2px rgba(0,0,0,.04), 0 10px 28px rgba(0,0,0,.05)" }}
+                style={{ boxShadow: "0 16px 40px rgba(0,0,0,0.24)" }}
               >
                 <CountUp
                   prefix={c.prefix}
@@ -79,16 +79,16 @@ export function Prueba() {
         </div>
 
         <Reveal delay={0.1}>
-          <p className="mt-6 text-sm" style={{ color: "var(--muted)" }}>
-            También llevamos las redes sociales y el contenido de <b>Kiwi</b>, marca de
-            terminales de pago.
+          <p className="mt-6 text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>
+            También llevamos las redes sociales y el contenido de{" "}
+            <b style={{ color: "#fff" }}>Kiwi</b>, marca de terminales de pago.
           </p>
         </Reveal>
 
         <Reveal delay={0.15}>
           <div
-            className="mt-10 flex flex-col items-start gap-4 rounded-2xl border p-6 sm:flex-row sm:items-center sm:justify-between"
-            style={{ borderColor: "var(--hairline)", background: "white" }}
+            className="mt-8 flex flex-col items-start gap-4 rounded-2xl p-6 sm:flex-row sm:items-center sm:justify-between"
+            style={{ background: "#ffffff", boxShadow: "0 18px 44px rgba(0,0,0,0.22)" }}
           >
             <p className="text-lg font-semibold" style={{ color: "var(--ink)" }}>
               ¿Quieres ver el bot en acción? Escríbele ahora mismo.

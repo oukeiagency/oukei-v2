@@ -1,5 +1,17 @@
 import type { ReactNode } from "react";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
+
+// Seguridad: si por lo que sea whileInView no dispara (pestaña en segundo plano
+// al cargar, etc.), a los 1.5 s mostramos el contenido igual. Nunca queda oculto.
+function useFallbackShown() {
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setShown(true), 1500);
+    return () => clearTimeout(t);
+  }, []);
+  return shown;
+}
 
 /** Aparición sutil al entrar en viewport, una sola vez. Respeta prefers-reduced-motion. */
 export function Reveal({
@@ -12,12 +24,14 @@ export function Reveal({
   className?: string;
 }) {
   const reduce = useReducedMotion();
+  const forced = useFallbackShown();
   if (reduce) return <div className={className}>{children}</div>;
   return (
     <motion.div
       className={className}
       initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
+      animate={forced ? { opacity: 1, y: 0 } : undefined}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, delay, ease: "easeOut" }}
     >
@@ -44,6 +58,7 @@ export function MaskReveal({
   delay?: number;
 }) {
   const reduce = useReducedMotion();
+  const forced = useFallbackShown();
   const motionMap = { h1: motion.h1, h2: motion.h2, h3: motion.h3, p: motion.p };
   if (reduce) {
     const Static = Tag;
@@ -61,6 +76,7 @@ export function MaskReveal({
         style={style}
         initial={{ y: "110%" }}
         whileInView={{ y: 0 }}
+        animate={forced ? { y: 0 } : undefined}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
       >

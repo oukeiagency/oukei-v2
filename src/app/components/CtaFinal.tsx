@@ -34,7 +34,7 @@ export function CtaFinal() {
   }
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="py-12 md:py-16" style={{ background: "#eef3ff" }}>
       <div className="mx-auto max-w-3xl px-6">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
@@ -53,8 +53,9 @@ export function CtaFinal() {
             onSubmit={onSubmit}
             className="mt-8 rounded-2xl border p-6 md:p-8"
             style={{
-              borderColor: "var(--hairline)",
-              boxShadow: "0 1px 2px rgba(0,0,0,.04), 0 10px 28px rgba(0,0,0,.06)",
+              borderColor: "#cddffb",
+              background: "#ffffff",
+              boxShadow: "0 18px 44px rgba(0,45,127,0.12)",
             }}
           >
             <div className="grid gap-4 sm:grid-cols-2">

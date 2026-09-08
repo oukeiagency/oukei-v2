@@ -31,12 +31,14 @@ function Paso({
   texto,
   onActive,
   active,
+  accent = "#006DFD",
 }: {
   i: number;
   titulo: string;
   texto: string;
   onActive: (i: number) => void;
   active: boolean;
+  accent?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { margin: "-45% 0px -45% 0px" });
@@ -49,9 +51,9 @@ function Paso({
       ref={ref}
       className="rounded-2xl border bg-white p-6 transition-all duration-300 md:p-8"
       style={{
-        borderColor: active ? "#006DFD" : "var(--hairline)",
+        borderColor: active ? accent : "var(--hairline)",
         boxShadow: active
-          ? "0 18px 44px -14px rgba(0,109,253,0.25)"
+          ? "0 20px 46px -14px rgba(0,0,0,0.28)"
           : "0 1px 2px rgba(0,0,0,.04), 0 10px 28px rgba(0,0,0,.05)",
         transform: active ? "translateY(-2px)" : "none",
       }}
@@ -60,7 +62,7 @@ function Paso({
         <span
           className="flex h-8 w-8 flex-none items-center justify-center rounded-full text-sm font-bold transition-colors"
           style={{
-            background: active ? "#006DFD" : "#eef3ff",
+            background: active ? accent : "#eef3ff",
             color: active ? "#fff" : "#006DFD",
           }}
         >
@@ -77,30 +79,40 @@ function Paso({
   );
 }
 
-export function ComoFunciona() {
+export function ComoFunciona({ variant = "light" }: { variant?: "light" | "bold" }) {
   const [active, setActive] = useState(0);
+  const bold = variant === "bold";
+  const accent = bold ? "#FF6D2C" : "#006DFD";
 
   return (
-    <section id="como-funciona" className="py-12 md:py-16" style={{ background: "#eef3ff" }}>
+    <section
+      id="como-funciona"
+      className="py-12 md:py-16"
+      style={{ background: bold ? "#04123c" : "#eef3ff" }}
+    >
       <div className="mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
         {/* Columna sticky */}
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
+          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: accent }}>
             Cómo funciona
           </p>
           <MaskReveal
             as="h2"
             className="mt-3 text-3xl font-bold leading-tight md:text-4xl"
+            style={bold ? { color: "#fff" } : undefined}
           >
             Tu WhatsApp, trabajando solo en 4 pasos
           </MaskReveal>
 
           {/* Indicador de progreso (solo desktop) */}
           <div className="mt-8 hidden lg:flex lg:gap-4">
-            <div className="relative w-1 flex-none rounded-full" style={{ background: "#dfe4ec" }}>
+            <div
+              className="relative w-1 flex-none rounded-full"
+              style={{ background: bold ? "rgba(255,255,255,0.15)" : "#dfe4ec" }}
+            >
               <motion.div
                 className="absolute left-0 top-0 w-full rounded-full"
-                style={{ background: "#006DFD" }}
+                style={{ background: accent }}
                 animate={{ height: `${((active + 1) / pasos.length) * 100}%` }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
               />
@@ -110,7 +122,14 @@ export function ComoFunciona() {
                 <li
                   key={p.titulo}
                   className="text-sm font-semibold transition-colors"
-                  style={{ color: i === active ? "#006DFD" : "var(--muted)" }}
+                  style={{
+                    color:
+                      i === active
+                        ? accent
+                        : bold
+                          ? "rgba(255,255,255,0.55)"
+                          : "var(--muted)",
+                  }}
                 >
                   {String(i + 1).padStart(2, "0")} · {p.titulo}
                 </li>
@@ -129,6 +148,7 @@ export function ComoFunciona() {
               texto={p.texto}
               active={i === active}
               onActive={setActive}
+              accent={accent}
             />
           ))}
         </div>

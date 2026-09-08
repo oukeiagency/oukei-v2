@@ -15,7 +15,8 @@ const TIPOS = [
 const field =
   "w-full rounded-xl border px-4 py-3 text-[15px] outline-none focus:border-[#006DFD]";
 
-export function CtaFinal() {
+export function CtaFinal({ variant = "light" }: { variant?: "light" | "bold" }) {
+  const bold = variant === "bold";
   const navigate = useNavigate();
   const [nombre, setNombre] = useState("");
   const [tel, setTel] = useState("");
@@ -34,16 +35,19 @@ export function CtaFinal() {
   }
 
   return (
-    <section className="py-12 md:py-16" style={{ background: "#eef3ff" }}>
+    <section
+      className="py-12 md:py-16"
+      style={{ background: bold ? "#04123c" : "#eef3ff" }}
+    >
       <div className="mx-auto max-w-3xl px-6">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
+          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: bold ? "#FF6D2C" : "#006DFD" }}>
             Empieza hoy
           </p>
-          <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
+          <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: bold ? "#fff" : "var(--ink)" }}>
             ¿Listo para dejar de perder citas?
           </MaskReveal>
-          <p className="mt-4 text-[15px] leading-relaxed" style={{ color: "var(--muted)" }}>
+          <p className="mt-4 text-[15px] leading-relaxed" style={{ color: bold ? "rgba(255,255,255,0.7)" : "var(--muted)" }}>
             Cuéntanos de tu negocio y te mostramos el bot funcionando. Sin compromiso.
           </p>
         </Reveal>
@@ -126,19 +130,26 @@ export function CtaFinal() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="mt-6 text-center text-sm" style={{ color: "var(--muted)" }}>
+          <p
+            className="mt-6 text-center text-sm"
+            style={{ color: bold ? "rgba(255,255,255,0.6)" : "var(--muted)" }}
+          >
             O escríbenos directo:{" "}
             <a
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold"
-              style={{ color: "#006DFD" }}
+              style={{ color: bold ? "#FF6D2C" : "#006DFD" }}
             >
               WhatsApp
             </a>{" "}
             ·{" "}
-            <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold" style={{ color: "#006DFD" }}>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="font-semibold"
+              style={{ color: bold ? "#FF6D2C" : "#006DFD" }}
+            >
               {CONTACT_EMAIL}
             </a>
           </p>

@@ -12,14 +12,19 @@ const NICHOS = [
 
 /** Tira horizontal con desplazamiento lento e infinito. Se pausa al pasar el mouse
  *  y se detiene por completo con prefers-reduced-motion. */
-export function Marquee() {
+export function Marquee({ variant = "light" }: { variant?: "light" | "bold" }) {
   const reduce = useReducedMotion();
   const items = [...NICHOS, ...NICHOS];
+  const bold = variant === "bold";
 
   return (
     <div
       className="border-y py-4"
-      style={{ borderColor: "#dbe6fb", background: "#eef3ff" }}
+      style={
+        bold
+          ? { borderColor: "rgba(255,255,255,0.1)", background: "#04123c" }
+          : { borderColor: "#dbe6fb", background: "#eef3ff" }
+      }
       aria-label="Negocios para los que trabaja el bot"
     >
       <div
@@ -43,9 +48,9 @@ export function Marquee() {
             <span
               key={`${n}-${i}`}
               className="text-sm font-semibold uppercase tracking-wider"
-              style={{ color: "var(--muted)" }}
+              style={{ color: bold ? "rgba(255,255,255,0.72)" : "var(--muted)" }}
             >
-              <span style={{ color: "#006DFD" }}>·</span>&nbsp;&nbsp;{n}
+              <span style={{ color: bold ? "#FF6D2C" : "#006DFD" }}>·</span>&nbsp;&nbsp;{n}
             </span>
           ))}
         </div>

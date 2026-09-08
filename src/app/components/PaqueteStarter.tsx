@@ -20,12 +20,15 @@ function Check() {
   );
 }
 
-export function PaqueteStarter() {
+export function PaqueteStarter({ variant = "light" }: { variant?: "light" | "bold" }) {
+  const bold = variant === "bold";
+  const priceText = bold ? "#ffffff" : "var(--ink)";
+  const priceMuted = bold ? "rgba(255,255,255,0.6)" : "var(--muted)";
   return (
     <section id="paquete" className="bg-white py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
+          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: bold ? "#FF6D2C" : "#006DFD" }}>
             Paquete Starter
           </p>
           <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>
@@ -51,25 +54,27 @@ export function PaqueteStarter() {
             <div
               className="rounded-2xl border p-7"
               style={{
-                borderColor: "#cddffb",
-                background: "#f4f8ff",
-                boxShadow: "0 1px 2px rgba(0,0,0,.04), 0 14px 34px rgba(0,45,127,.10)",
+                borderColor: bold ? "rgba(255,255,255,0.12)" : "#cddffb",
+                background: bold ? "#04123c" : "#f4f8ff",
+                boxShadow: bold
+                  ? "0 24px 60px rgba(0,0,0,0.28)"
+                  : "0 1px 2px rgba(0,0,0,.04), 0 14px 34px rgba(0,45,127,.10)",
               }}
             >
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl font-bold" style={{ color: "var(--ink)" }}>
+                <span className="text-4xl font-bold" style={{ color: priceText }}>
                   $6,500
                 </span>
-                <span style={{ color: "var(--muted)" }}>setup único MXN</span>
+                <span style={{ color: priceMuted }}>setup único MXN</span>
               </div>
               <div className="mt-2 flex items-baseline gap-2">
-                <span className="text-2xl font-bold" style={{ color: "var(--ink)" }}>
+                <span className="text-2xl font-bold" style={{ color: priceText }}>
                   $1,200
                 </span>
-                <span style={{ color: "var(--muted)" }}>al mes MXN</span>
+                <span style={{ color: priceMuted }}>al mes MXN</span>
               </div>
 
-              <ul className="mt-5 space-y-2 text-sm" style={{ color: "var(--muted)" }}>
+              <ul className="mt-5 space-y-2 text-sm" style={{ color: priceMuted }}>
                 <li>· Implementación en 1–2 semanas</li>
                 <li>· Sin permanencia forzosa</li>
                 <li>· Soporte y ajustes incluidos en la mensualidad</li>
@@ -77,7 +82,11 @@ export function PaqueteStarter() {
 
               <div
                 className="mt-5 rounded-xl p-3 text-sm"
-                style={{ background: "#eef3ff", color: "#0b3ea8" }}
+                style={
+                  bold
+                    ? { background: "rgba(255,109,44,0.14)", color: "#ffd0b8" }
+                    : { background: "#eef3ff", color: "#0b3ea8" }
+                }
               >
                 <b>Precio fundador:</b> para los primeros negocios, el setup va a mitad
                 de precio o diferido.

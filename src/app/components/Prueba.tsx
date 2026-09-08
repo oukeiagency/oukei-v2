@@ -32,12 +32,13 @@ const casos = [
   },
 ];
 
-export function Prueba() {
+export function Prueba({ variant = "light" }: { variant?: "light" | "bold" }) {
+  const bold = variant === "bold";
   return (
-    <section className="py-12 md:py-16" style={{ background: "#002F7F" }}>
+    <section className="py-12 md:py-16" style={{ background: bold ? "#EB3200" : "#002F7F" }}>
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#93c0ff" }}>
+          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: bold ? "rgba(255,255,255,0.9)" : "#93c0ff" }}>
             Confianza
           </p>
           <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "#ffffff" }}>

@@ -33,12 +33,13 @@ const faqs = [
   },
 ];
 
-export function Faq() {
+export function Faq({ variant = "light" }: { variant?: "light" | "bold" }) {
+  const bold = variant === "bold";
   return (
     <section id="faq" className="bg-white py-12 md:py-16">
       <div className="mx-auto max-w-3xl px-6">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
+          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: bold ? "#FF6D2C" : "#006DFD" }}>
             Preguntas frecuentes
           </p>
           <MaskReveal as="h2" className="mt-3 text-3xl font-bold leading-tight md:text-4xl" style={{ color: "var(--ink)" }}>

@@ -18,12 +18,13 @@ const dolores = [
   },
 ];
 
-export function Problema() {
+export function Problema({ variant = "light" }: { variant?: "light" | "bold" }) {
+  const bold = variant === "bold";
   return (
     <section className="bg-white py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: "#006DFD" }}>
+          <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: bold ? "#FF6D2C" : "#006DFD" }}>
             El problema
           </p>
           <MaskReveal
@@ -47,7 +48,7 @@ export function Problema() {
               >
                 <div
                   className="mb-4 flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold text-white"
-                  style={{ background: "#006DFD" }}
+                  style={{ background: bold ? "#FF6D2C" : "#006DFD" }}
                 >
                   {i + 1}
                 </div>

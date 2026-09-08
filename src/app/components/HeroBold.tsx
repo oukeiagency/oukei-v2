@@ -4,6 +4,7 @@ import { WhatsAppCTA } from "./WhatsAppButton";
 import { ChatMock } from "./ChatMock";
 import { ParticleField } from "./ParticleField";
 import { CITY } from "@/config/site";
+import heroBg from "@/assets/lab-hero-bg.jpg";
 
 /** Hero de la versión "bold": fondo azul profundo, partículas, titular con
  *  palabra en naranja y panel de chat con inclinación 3D según el mouse. */
@@ -26,13 +27,21 @@ export function HeroBold() {
       className="relative overflow-hidden"
       style={{ background: "#04123c" }}
     >
-      <ParticleField />
+      {/* Foto de ambiente (barbería al anochecer) */}
+      <img
+        src={heroBg}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ opacity: 0.5 }}
+      />
       {/* velo para contraste del texto (color plano, sin gradiente) */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
-        style={{ background: "rgba(4,18,60,0.45)" }}
+        style={{ background: "rgba(4,18,60,0.6)" }}
       />
+      <ParticleField />
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 px-6 pt-28 pb-14 lg:grid-cols-[1.05fr_0.95fr] lg:pt-36 lg:pb-20">
         <div>

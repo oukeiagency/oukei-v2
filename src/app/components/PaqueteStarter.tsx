@@ -1,5 +1,6 @@
 import { Reveal, MaskReveal } from "./Reveal";
 import { WhatsAppCTA } from "./WhatsAppButton";
+import bot3d from "@/assets/lab-bot-3d.png";
 
 const incluye = [
   "Mensaje de bienvenida con el tono de tu negocio",
@@ -25,8 +26,17 @@ export function PaqueteStarter({ variant = "light" }: { variant?: "light" | "bol
   const priceText = bold ? "#ffffff" : "var(--ink)";
   const priceMuted = bold ? "rgba(255,255,255,0.6)" : "var(--muted)";
   return (
-    <section id="paquete" className="bg-white py-12 md:py-16">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="paquete" className="relative overflow-hidden bg-white py-12 md:py-16">
+      {bold && (
+        <img
+          src={bot3d}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-4 top-6 hidden w-52 lg:block xl:w-64 [animation:oukei-breathe_4s_ease-in-out_infinite]"
+          style={{ filter: "drop-shadow(0 24px 44px rgba(0,45,127,0.16))" }}
+        />
+      )}
+      <div className="relative mx-auto max-w-6xl px-6">
         <Reveal>
           <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: bold ? "#FF6D2C" : "#006DFD" }}>
             Paquete Starter

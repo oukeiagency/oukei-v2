@@ -24,8 +24,8 @@ export default function ThanksPage() {
       </div>
       <h1 className="text-3xl font-bold md:text-4xl">¡Listo! Recibimos tus datos.</h1>
       <p className="mt-4 max-w-md text-lg" style={{ color: "#5b5b5b" }}>
-        Un experto de OÜKEI te contacta en menos de 24 horas. Si quieres adelantar,
-        escríbenos ahora por WhatsApp.
+        Te contactamos en menos de 24 horas. Si quieres adelantar, escríbenos ahora
+        por WhatsApp.
       </p>
 
       <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">

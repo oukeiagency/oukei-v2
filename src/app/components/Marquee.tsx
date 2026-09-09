@@ -7,7 +7,7 @@ const NICHOS = [
   "Veterinarias",
   "Spa",
   "Estética",
-  "Studios de cejas y pestañas",
+  "Estudios de cejas y pestañas",
 ];
 
 /** Tira horizontal con desplazamiento lento e infinito. Se pausa al pasar el mouse

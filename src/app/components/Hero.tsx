@@ -55,8 +55,8 @@ export function Hero() {
             style={{ color: "var(--muted)" }}
           >
             Instalamos un asistente en <b style={{ color: "var(--ink)" }}>tu</b> WhatsApp que
-            responde al instante, agenda en tu calendario y le recuerda a tus clientes.
-            Funcionando en 1–2 semanas.
+            responde al instante, agenda en tu calendario y les recuerda su cita a tus
+            clientes. Funcionando en 1–2 semanas.
           </motion.p>
 
           <motion.div

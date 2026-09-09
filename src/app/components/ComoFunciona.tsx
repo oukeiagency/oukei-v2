@@ -16,7 +16,7 @@ const pasos = [
   {
     titulo: "El bot atiende y agenda",
     texto:
-      "Responde en segundos y escribe la cita directo en tu Google Calendar. Manda recordatorio 24 h y 2 h antes.",
+      "Responde en segundos y escribe la cita directo en tu Google Calendar. Manda un recordatorio 24 h y 2 h antes.",
   },
   {
     titulo: "Tú tienes el control",

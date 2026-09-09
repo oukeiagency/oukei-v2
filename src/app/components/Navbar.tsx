@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Menu, X } from "lucide-react";
-import oukeiLogo from "@/assets/Oukei_v2.svg";
+import oukeiLogo from "@/assets/oukei-logo.png";
+import oukeiLogoWhite from "@/assets/oukei-logo-white.png";
 import { waLink } from "@/config/site";
 
 const navItems = [
@@ -35,7 +36,7 @@ export function Navbar() {
           }}
         >
           <a href="#" aria-label="OÜKEI — inicio">
-            <img src={oukeiLogo} alt="OÜKEI" className="h-8 w-auto" style={{ maxWidth: 150 }} />
+            <img src={oukeiLogo} alt="OÜKEI" className="h-7 w-auto md:h-8" />
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
@@ -92,9 +93,7 @@ export function Navbar() {
               transition={{ type: "tween", duration: 0.25 }}
             >
               <div className="flex items-center justify-between px-6 py-5" style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-                <span className="text-lg font-bold text-white">
-                  O<span style={{ color: "#FF6D2C" }}>ü</span>kei
-                </span>
+                <img src={oukeiLogoWhite} alt="OÜKEI" className="h-6 w-auto" />
                 <button
                   onClick={() => setOpen(false)}
                   className="flex h-8 w-8 items-center justify-center rounded-lg"

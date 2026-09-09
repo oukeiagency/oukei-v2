@@ -75,7 +75,7 @@ export function PaqueteStarter({ variant = "light" }: { variant?: "light" | "bol
                 <span className="text-4xl font-bold" style={{ color: priceText }}>
                   $6,500
                 </span>
-                <span style={{ color: priceMuted }}>setup único MXN</span>
+                <span style={{ color: priceMuted }}>instalación · pago único MXN</span>
               </div>
               <div className="mt-2 flex items-baseline gap-2">
                 <span className="text-2xl font-bold" style={{ color: priceText }}>
@@ -98,8 +98,8 @@ export function PaqueteStarter({ variant = "light" }: { variant?: "light" | "bol
                     : { background: "#eef3ff", color: "#0b3ea8" }
                 }
               >
-                <b>Precio fundador:</b> para los primeros negocios, el setup va a mitad
-                de precio o diferido.
+                <b>Precio fundador:</b> para los primeros negocios, la instalación va a
+                mitad de precio o se difiere.
               </div>
 
               <WhatsAppCTA

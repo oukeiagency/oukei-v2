@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto cuesta?",
-    a: "$6,500 MXN de setup único y $1,200 MXN al mes. Para los primeros negocios, el setup va a mitad de precio o diferido.",
+    a: "$6,500 MXN de instalación (pago único) y $1,200 MXN al mes. Para los primeros negocios, la instalación va a mitad de precio o se difiere.",
   },
 ];
 

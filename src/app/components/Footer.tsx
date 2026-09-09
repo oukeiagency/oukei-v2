@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import oukeiLogoWhite from "@/assets/oukei-logo-white.png";
 import { waLink, CONTACT_EMAIL, CITY } from "@/config/site";
 
 const nav = [
@@ -12,10 +13,8 @@ export function Footer() {
     <footer style={{ background: "#002F7F" }}>
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-[1.4fr_1fr]">
         <div>
-          <p className="text-xl font-bold text-white">
-            O<span style={{ color: "#FF6D2C" }}>ü</span>kei
-          </p>
-          <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/70">
+          <img src={oukeiLogoWhite} alt="OÜKEI" className="h-8 w-auto" />
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
             Bot de citas por WhatsApp para negocios locales en {CITY}. Responde,
             agenda y recuerda — solo.
           </p>
